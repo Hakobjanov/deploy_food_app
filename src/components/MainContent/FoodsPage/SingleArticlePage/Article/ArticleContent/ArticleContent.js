@@ -17,7 +17,6 @@ const ArticleContent = ( {
   addPost,
   comments
 } ) => {
-    console.log(comments)
   return (
     <div className="articleContent">
       <ArticleSocial />

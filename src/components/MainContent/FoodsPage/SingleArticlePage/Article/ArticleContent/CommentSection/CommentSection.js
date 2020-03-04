@@ -6,6 +6,8 @@ import "./commentsection.css";
 const CommentSection = ( { addPost, comments } ) => {
   let newCommentText = React.createRef();
   let commentName = React.createRef();
+  let commentsCount = comments.length;
+  
 
   let addNewPost = (e) => {
     let name = commentName.current.value;
@@ -16,12 +18,12 @@ const CommentSection = ( { addPost, comments } ) => {
       commentName.current.value = "";
       newCommentText.current.value = "";
     }
-    e.preventDefault();
+    //e.preventDefault();
   }; 
 
   return (
     <div className="comment-section">
-      <div className="comments">0 comments</div>
+      <div className="comments">{commentsCount} comments</div>
       <div className="leave-a-comment">
         <div className="leave-a-comment__title">Leave a comment</div>
 

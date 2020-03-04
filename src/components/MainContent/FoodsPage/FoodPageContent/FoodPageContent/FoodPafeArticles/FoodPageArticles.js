@@ -13,7 +13,6 @@ class FoodsPageArticles extends Component {
       this.setState((prevState) => ({
           items: prevState.items + 3
     }))
-    console.log('vasil')
   }
 
   render() {
