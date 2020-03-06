@@ -14,8 +14,8 @@ function Main({
   return (
       <div className="main">
         <Stories 
-          foodPageArticlesData={foodPageArticlesData}
-          toggleLike={toggleLike}
+          foodPageArticlesData={ foodPageArticlesData }
+          toggleLike={ toggleLike }
           />
   
         <Posts />

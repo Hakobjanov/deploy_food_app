@@ -1,11 +1,12 @@
 import React from 'react'
 
+import './comment.css'
+
 const Comment = ({name, comment}) => {
-    console.log(name, comment)
     return (
         <div className='post'>
-            <div>{name}</div>
-            <div>{comment}</div>
+            <div className='postName'><span className='postNameSpan'>from</span> {name}:</div>
+            <div className='postText'>"{comment}"</div>
         </div>
     )
 }

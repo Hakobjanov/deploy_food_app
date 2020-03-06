@@ -7,51 +7,66 @@ import Favourite from '../Favourite/Favourite'
 
 import { Route, Switch } from "react-router-dom";
 
-const MainContent = ({
+const MainContent = ( {
   foodPageArticlesData,
   setCategory,
   category,
   toggleLike
-}) => {
+} ) => {
   return (
     <Switch>
-      <Route exact 
-        path="/home" 
+      <Route 
+        exact 
+        path="/" 
         render = { () => (
           <div>
             <SliderPage/>
             <Main 
-            foodPageArticlesData={foodPageArticlesData}
-            toggleLike={toggleLike}
+            foodPageArticlesData={ foodPageArticlesData }
+            toggleLike={ toggleLike }
             />
           </div>
         ) }/>
+        <Route
+          path="/about"
+          render={ () => (
+            <h1>About</h1>
+        ) }
+      />
       <Route
         exact
         path="/foodsPage"
-        render={() => (
+        render={ () => (
           <FoodsPage
-            foodPageArticlesData={foodPageArticlesData}
-            filterFn={category ? (article) => article.category === category : Boolean}
-            setCategory={setCategory}
-            toggleLike={toggleLike}
+            foodPageArticlesData={ foodPageArticlesData }
+            filterFn={ category ? (article) => article.category === category : Boolean }
+            setCategory={ setCategory }
+            toggleLike={ toggleLike }
           />
         )}
       />
 
-      <Route path="/foodsPage/:article" component={SingleArticlePage} />
+      <Route path="/foodsPage/:article" component={ SingleArticlePage } />
+
+      <Route
+        path="/contact"
+        render={ () => (
+          <h1>Contact</h1>
+        ) }
+      />
 
       <Route 
         path="/favourite" 
-        render={() => (
+        render={ () => (
           <Favourite 
-            foodPageArticlesData={foodPageArticlesData}
-            filterFn={(article) => article.isLiked} 
-            toggleLike={toggleLike}
-            setCategory={setCategory}
+            foodPageArticlesData={ foodPageArticlesData }
+            filterFn={ (article) => article.isLiked } 
+            toggleLike={ toggleLike }
+            setCategory={ setCategory }
             />
-        )}/>
-
+        ) }
+      />
+      <Route render={ () => <h2>Page not found</h2> } />
       {/* <Route path='/singleArticlePage'
             render={() => (
             <SingleArticlePage

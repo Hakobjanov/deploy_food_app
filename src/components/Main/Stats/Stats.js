@@ -6,9 +6,9 @@ import StatsInfo from './StatsInfo/StatsInfo'
 
 function Stats() {
     return (
-        <div class="about-stories">
-            <div class="container">
-                <div class="about-stories__wrapper">
+        <div className="about-stories">
+            <div className="container">
+                <div className="about-stories__wrapper">
 
                     <StatsBg />
 

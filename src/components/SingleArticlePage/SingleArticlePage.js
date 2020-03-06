@@ -14,9 +14,9 @@ const SingleArticlePage = () => {
                 author
             }) => (
                 <div key={id} className='stories-little__item post-item article'>
-        <img className="post-img" src={image} alt={title} />
-<div>{text}</div>
-<div>{author}</div>
+                    <img className="post-img" src={image} alt={title} />
+                    <div>{text}</div>
+                    <div>{author}</div>
 
         <div className="stories-little__item-cat">
             <span>{category}</span>
@@ -24,11 +24,10 @@ const SingleArticlePage = () => {
         </div>
         
 
-    </div>
-            ))
-
-            }
         </div>
+            ))
+        }
+    </div>
     )
 }
 

@@ -8,7 +8,7 @@ const StatsInfoItem = ({
 }) => {
     return (
       
-            <div class="about-stories__stat">
+            <div className="about-stories__stat">
                 <div className='about-stories__stat-item'><span>{number}</span>
                 <div>{ofWhat}</div>
             </div>

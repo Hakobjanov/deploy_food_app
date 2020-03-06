@@ -1,0 +1,33 @@
+.post {
+    width: 75%;
+    margin: 25px 0;
+    padding: 25px;
+    background-color: #eeececda;
+    border-radius: 3px 30px 30px 30px;
+    border: 1px solid #000;
+    font-family: "Playfair Display", serif;
+}
+
+.postName{
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.postNameSpan {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #999999;
+}
+
+.postText {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+}
+
+.postTextSpan{
+    background-color: #eeececda;
+}

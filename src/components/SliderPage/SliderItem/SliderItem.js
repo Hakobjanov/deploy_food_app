@@ -4,11 +4,11 @@ import SliderPhoto from './SliderPhoto/SliderPhoto'
 
 import './slideritem.css'
 
-const SliderItem = ({
+const SliderItem = ( {
     image,
     title,
     text
-}) => {
+} ) => {
     return(
         <div className='slider-item'>
     

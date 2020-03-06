@@ -10,14 +10,14 @@ import "./storieslittleitem.css";
 const StoriesLittleItem = ({ id, image, category, year, title, toggleLike, isLiked }) => {
   return (
     <div className="stories-little__item">
-      <img class="stories-little__item-img" src={image} alt={title} />
+      <img className="stories-little__item-img" src={image} alt={title} />
 
       <MainSocial 
             isLiked={isLiked} 
             toggleLike={toggleLike}
             id={id}/>
 
-      <div class="stories-little__item-cat">
+      <div className="stories-little__item-cat">
         <span>{category}</span>
         <span>{year}</span>
       </div>

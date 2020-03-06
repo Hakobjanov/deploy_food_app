@@ -4,7 +4,7 @@ import './statsbg.css'
 
 function StatsBg() {
     return (
-        <div class="about-stories__bg">
+        <div className="about-stories__bg">
             
         </div>
     )

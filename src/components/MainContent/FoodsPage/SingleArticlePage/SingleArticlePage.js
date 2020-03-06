@@ -24,8 +24,11 @@ class SingleArticlePage extends Component {
     }
     const newCommentsArr = [ ...this.state.comments, newComment ];
 
+    const commentsInStorage = JSON.parse(localStorage.commentsInStorage || '[]');
+    const newCommentInStorage = newComment;
+    localStorage.commentsInStorage = JSON.stringify(newCommentInStorage)
+
     this.setState( { comments : newCommentsArr } );
-    
     
   }
 

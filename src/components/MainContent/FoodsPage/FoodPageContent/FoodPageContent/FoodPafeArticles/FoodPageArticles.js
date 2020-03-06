@@ -10,9 +10,9 @@ class FoodsPageArticles extends Component {
   };
 
   loadMoreFn = () => {
-      this.setState((prevState) => ({
+      this.setState( (prevState) => ({
           items: prevState.items + 3
-    }))
+    }) )
   }
 
   render() {
@@ -20,17 +20,17 @@ class FoodsPageArticles extends Component {
           foodPageArticlesData, 
           filterFn,
           toggleLike 
-        } = this.props
+        } = this.props;
     return (
       <div className="postsItems foodPageArticles">
         {foodPageArticlesData
-          .filter(filterFn)
-          .map(({ id, image, category, year, title, isLiked }) => (
+          .filter( filterFn )
+          .map( ( { id, image, category, year, title, isLiked } ) => (
             <SingleFoodArticle
               key={id}
               {...{ id, image, category, year, title, isLiked, toggleLike }}
             />
-          )).slice(0, this.state.items)}
+          ) ).slice(0, this.state.items)}
         <LoadMoreBtn loadMoreFn={this.loadMoreFn} />
       </div>
     );

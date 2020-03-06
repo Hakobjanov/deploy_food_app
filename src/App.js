@@ -7,10 +7,11 @@ import "./common/animate.css";
 import Header from "./components/Header/Header";
 import MainContent from "./components/MainContent/MainContent";
 import Footer from "./components/Footer/Footer";
-import foodPageArticlesData from './components/MainContent/FoodsPage/FoodPageContent/FoodPageContent/FoodPafeArticles/foodPageArticlesData.js'
+import foodPageArticlesData from "./components/MainContent/FoodsPage/FoodPageContent/FoodPageContent/FoodPafeArticles/foodPageArticlesData.js";
+
+import { HashRouter as Router } from 'react-router-dom'
 
 class App extends Component {
-
   state = {
     foodPageArticlesData,
     category: null,
@@ -21,42 +22,45 @@ class App extends Component {
     this.setState({ category });
   };
 
-  toggleLike = (id) => {
-    this.setState(({foodPageArticlesData}) => {
+  toggleLike = id => {
+    this.setState(({ foodPageArticlesData }) => {
+      const i = foodPageArticlesData.findIndex(article => article.id === id);
 
-      const i = foodPageArticlesData.findIndex( article => article.id === id)
+      const foodPageArticle = {...foodPageArticlesData[i], isLiked: !foodPageArticlesData[i].isLiked};
 
-      const foodPageArticle = {...foodPageArticlesData[i], isLiked: !foodPageArticlesData[i].isLiked}
+      return {
+        foodPageArticlesData: [...foodPageArticlesData.slice(0, i), foodPageArticle, ...foodPageArticlesData.slice(i + 1)]
+      };
+    });
 
-      return {foodPageArticlesData: [...foodPageArticlesData.slice(0, i), foodPageArticle, ...foodPageArticlesData.slice(i + 1)]}
-     
-    })
-
-    const liked = JSON.parse(localStorage.liked || '[]') 
-    const newLiked = liked.includes(id) ? liked.filter((likedId) => likedId !== id) : [...liked, id]
-    localStorage.liked = JSON.stringify(newLiked)
-
-  }
-
-
+    const liked = JSON.parse(localStorage.liked || "[]");
+    const newLiked = liked.includes(id)
+      ? liked.filter(likedId => likedId !== id)
+      : [...liked, id];
+    localStorage.liked = JSON.stringify(newLiked);
+  };
 
   render() {
-    const favCount = this.state.foodPageArticlesData.filter((article) => article.isLiked).length
+    const favCount = this.state.foodPageArticlesData.filter(
+      article => article.isLiked
+    ).length;
     return (
-      <div className="App">
-      <Header favCount={favCount}/>
+      <Router>
+        <div className="App">
+          <Header favCount={ favCount } />
 
-      <MainContent
-         foodPageArticlesData={this.state.foodPageArticlesData}
-         category={this.state.category}
-         setCategory={this.setCategory}
-         toggleLike={this.toggleLike} />
+          <MainContent
+            foodPageArticlesData={ this.state.foodPageArticlesData }
+            category={ this.state.category }
+            setCategory={ this.setCategory }
+            toggleLike={ this.toggleLike }
+          />
 
-      <Footer />
-    </div>
-    )
+          <Footer />
+        </div>
+      </Router>
+    );
   }
-
 }
 
 export default App;
