@@ -9,10 +9,7 @@ import "./singlearticlepage.css";
 class SingleArticlePage extends Component {
 
   state = {
-    comments: [
-       {id:0, name: 'Solomon Grundy', comment: 'What the hell is going on?'},
-       {id:1, name: 'Solomon Grundy', comment: 'What the hell is going on?'}
-    ]
+    comments: localStorage.comments ? JSON.parse(localStorage.comments) : []
   };
 
   addPost = ( name, comment ) => {
@@ -24,39 +21,19 @@ class SingleArticlePage extends Component {
 
     const newCommentsArr = [ ...this.state.comments, newComment ];
 
-    
-
     this.setState( { comments : newCommentsArr } );
 
-    // const commentsInStorage = localStorage.commentsInStorage
-    //   ? JSON.parse(localStorage.commentsInStorage)
-    //   : [];
-    //   commentsInStorage.push( newComment );
-    // localStorage.commentsInStorage = JSON.stringify(commentsInStorage);
-
-
-    const inStorage = localStorage.inStorage ? JSON.parse(localStorage.inStorage) : [];
-    inStorage.push(newComment);
-    localStorage.inStorage = JSON.stringify(inStorage);
-
-    
+    const comments = localStorage.comments ? JSON.parse(localStorage.comments) : [];
+    comments.push( newComment );
+    localStorage.comments = JSON.stringify(comments);
   }
-
- loadInStorageComments(){
-    const inStorage = localStorage.inStorage ? JSON.parse(localStorage.inStorage) : [];
-    const arrCommentsInStorage = localStorage.inStorage ? JSON.parse(localStorage.inStorage) : [];
- 
- 
-    arrCommentsInStorage.forEach(comment => this.state.comments.push(comment));
-
-}
 
   render() {
     const {
       match,
       articlesMap = getArticlesMap(foodPageArticlesData)
     } = this.props;
-    this.loadInStorageComments();
+
     return( 
       <div className="articlePage">
       <div className="article-intro">
