@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/deploy_food_app/static/css/main.ef2c4013.chunk.css",
+    "main.css": "/deploy_food_app/static/css/main.1ef203b8.chunk.css",
     "main.js": "/deploy_food_app/static/js/main.5fe068ab.chunk.js",
     "main.js.map": "/deploy_food_app/static/js/main.5fe068ab.chunk.js.map",
     "runtime-main.js": "/deploy_food_app/static/js/runtime-main.f5b86d9b.js",
@@ -9,10 +9,10 @@
     "static/js/2.b3f82d8f.chunk.js": "/deploy_food_app/static/js/2.b3f82d8f.chunk.js",
     "static/js/2.b3f82d8f.chunk.js.map": "/deploy_food_app/static/js/2.b3f82d8f.chunk.js.map",
     "index.html": "/deploy_food_app/index.html",
-    "precache-manifest.2767d730d5e86f49fc2b09b3bb4f7851.js": "/deploy_food_app/precache-manifest.2767d730d5e86f49fc2b09b3bb4f7851.js",
+    "precache-manifest.76350615b8b47dd98c1dfc2afa64a0c3.js": "/deploy_food_app/precache-manifest.76350615b8b47dd98c1dfc2afa64a0c3.js",
     "service-worker.js": "/deploy_food_app/service-worker.js",
     "static/css/2.1f7899cc.chunk.css.map": "/deploy_food_app/static/css/2.1f7899cc.chunk.css.map",
-    "static/css/main.ef2c4013.chunk.css.map": "/deploy_food_app/static/css/main.ef2c4013.chunk.css.map",
+    "static/css/main.1ef203b8.chunk.css.map": "/deploy_food_app/static/css/main.1ef203b8.chunk.css.map",
     "static/js/2.b3f82d8f.chunk.js.LICENSE": "/deploy_food_app/static/js/2.b3f82d8f.chunk.js.LICENSE",
     "static/media/bigstory.css": "/deploy_food_app/static/media/1.f0bb9f93.jpg",
     "static/media/arrowToRight.svg": "/deploy_food_app/static/media/arrowToRight.b7caa255.svg",
@@ -36,7 +36,7 @@
     "static/js/runtime-main.f5b86d9b.js",
     "static/css/2.1f7899cc.chunk.css",
     "static/js/2.b3f82d8f.chunk.js",
-    "static/css/main.ef2c4013.chunk.css",
+    "static/css/main.1ef203b8.chunk.css",
     "static/js/main.5fe068ab.chunk.js"
   ]
 }
